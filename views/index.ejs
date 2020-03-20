@@ -23,6 +23,7 @@
       </div>
     </div>
   </div>
+
     <h1>ToDo登録</h1>
     <form action="/create" method="post">
       <p>タスク名</p>
@@ -39,8 +40,9 @@
     <ul>
       <% todos.map(todo => { %>
         <li>
-          <p><%= todo.title %></p>
+          <h2><%= todo.title %></h2>
           <p><%= todo.text %></p>
+          <p>作成日<%= todo.created_at %><br>更新日<%= todo.updated_at %></p>
           <!-- 編集ボタン -->
           <a href="/edit/<%= todo.id %>">編集</a>
 
