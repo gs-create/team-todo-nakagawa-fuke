@@ -3,13 +3,13 @@
   <head>
     <title>ToDo App</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/style.js' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <h1>ToDo</h1>
+  　<div class="modal-wrapper">
     <div id="modal" class="modal js-modal">
-      <div class="js-modal-close"></div>
-      <div class="modal-content">
+      <div class="modal__content">
+        <a href="#" class="js-modal__close">×</a>
         <p>有料登録しませんか？ </p>
         <p>このサービスに登録するとこんな機能が追加されます。</p>
         <ul>
@@ -17,8 +17,11 @@
           <li>期限通知機能</li>
           <li>他サービスとの連携</li>
         </ul>
-      <a href="#" class="js-modal-close">OK</a>
+      <a href="" class="js-modal__close">OK</a>
       </div>
     </div>
+  </div>
   </body>
+  <script src="/stylesheets/style.js"></script>
+
 </html>

@@ -1,11 +1,10 @@
 $(function() {
   setTimeout(function() {
-    var modal = document.getElementById("modal");
-    modal.classList.add("show");
-  },5000);
+    $("#modal").fadeIn();
+  }, 5000);
 
-  $(".js-modal-close").on("click", function() {
-    $(".js-modal").fadeOut();
-    return false;
+  $(".js-modal__close").on("click", function() {
+    $("#modal").fadeOut();
   });
 });
+
