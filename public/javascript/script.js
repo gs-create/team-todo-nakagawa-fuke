@@ -1,7 +1,7 @@
 $(function() {
   setTimeout(function() {
     $("#modal").fadeIn();
-  }, 5000);
+  }, 2000);
 
   $(".js-modal__close").on("click", function() {
     $("#modal").fadeOut();
