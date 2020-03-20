@@ -42,11 +42,18 @@
         <li>
           <p><%= todo.title %></p>
           <p><%= todo.text %></p>
+          <!-- 編集ボタン -->
           <a href="/edit/<%= todo.id %>">編集</a>
+
+          <!-- 削除(完了)ボタン -->
+          <form action="/delete/<%= todo.id %>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="完了">
+          </form>
         </li>
       <% }) %>
     </ul>
   </body>
-  <script src="/stylesheets/style.js"></script>
+  <script src="/javascript/script.js"></script>
 
 </html>
