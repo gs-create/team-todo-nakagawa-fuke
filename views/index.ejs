@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ToDo App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>ToDoリスト</title>
   </head>
   <body>
-  　<div class="modal-wrapper">
+    <div class="modal-wrapper">
     <div id="modal" class="modal js-modal">
       <div class="modal__content">
         <a href="#" class="js-modal__close">×</a>
@@ -21,6 +23,29 @@
       </div>
     </div>
   </div>
+    <h1>ToDo登録</h1>
+    <form action="/create" method="post">
+      <p>タスク名</p>
+      <input type="text" name="todoTitle">
+      <p>タスク詳細</p>
+      <input type="text" name="todoText">
+      <p>
+        <!-- 新規作成ボタン -->
+        <input type="submit" value="作成">
+      </p>
+    </form>
+    <input type="submit" value="クリア">
+
+    <h1>ToDoリスト</h1>
+    <ul>
+      <% todos.map(todo => { %>
+        <li>
+          <p><%= todo.title %></p>
+          <p><%= todo.text %></p>
+          <a href="/edit/<%= todo.id %>">編集</a>
+        </li>
+      <% }) %>
+    </ul>
   </body>
   <script src="/stylesheets/style.js"></script>
 
