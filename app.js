@@ -81,6 +81,17 @@ app.put('/update/:id',(req,res)=>{
   );
 })
 
+//削除（完了）
+app.delete('/delete/:id', (req, res) => {
+  connection.query(
+    'DELETE FROM todos WHERE id = ?',
+    [req.params.id],
+    (error, results) => {
+      res.redirect('/');
+    }
+  );
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
