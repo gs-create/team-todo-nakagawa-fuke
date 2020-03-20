@@ -35,7 +35,7 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
   host : 'localhost',
   user : 'root',
-  database: 'node_todo'
+  database: 'ToDoList'
 });
 
 //一覧表示
