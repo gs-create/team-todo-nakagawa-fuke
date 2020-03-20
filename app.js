@@ -43,6 +43,7 @@ app.get('/', (req, res) => {
   connection.query(
     'SELECT * FROM todos',
     (error, results) => {
+      console.log(results);
       res.render('index.ejs', { todos: results } );
     }
   );

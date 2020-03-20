@@ -4,7 +4,7 @@ $(function() {
   }, 2000);
 
   $(".js-modal__close").on("click", function() {
-    $("#modal").fadeOut();
+    $(".modal-wrapper").fadeOut();
   });
 });
 
