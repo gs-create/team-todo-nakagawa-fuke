@@ -14,6 +14,7 @@
       <p>タスク詳細</p>
       <input type="text" name="todoText">
       <p>
+        <!-- 新規作成ボタン -->
         <input type="submit" value="作成">
       </p>
     </form>
@@ -25,6 +26,7 @@
         <li>
           <p><%= todo.title %></p>
           <p><%= todo.text %></p>
+          <a href="/edit/<%= todo.id %>">編集</a>
         </li>
       <% }) %>
     </ul>
