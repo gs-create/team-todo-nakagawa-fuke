@@ -1,6 +1,6 @@
 $(function() {
   setTimeout(function() {
-    $("#modal").fadeIn();
+    $(".modal").fadeIn();
   }, 2000);
 
   $(".js-modal__close").on("click", function() {
