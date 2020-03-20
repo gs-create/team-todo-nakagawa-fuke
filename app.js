@@ -16,6 +16,38 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//ここから書き始める
+
+//メソッドオーバーライドの設定
+var methodOverride = require('method-override');
+app.use(methodOverride(function (req, res) {
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}));
+
+//データベースの設定
+const mysql = require('mysql');
+// MySQLとのコネクションの作成
+const connection = mysql.createConnection({
+  host : 'localhost',
+  user : 'root',
+  database: 'node_todo'
+});
+
+//一覧表示
+app.get('/', (req, res) => {
+  connection.query(
+    'SELECT * FROM todos',
+    (error, results) => {
+      res.render('index.ejs', { todos: results } );
+    }
+  );
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
