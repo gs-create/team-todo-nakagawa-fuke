@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/stylesheets/style.css">
+        <title>編集画面</title>
+    </head>
+    <body>
+    <h1>編集</h1>
+    <form action="/update/<%= todo.id %>" method="post">
+        <input type="hidden" name="_method" value="put">
+        <p><input type="text" name="editTitle" value="<%= todo.title %>"></p>
+        <p><input type="text" name="editText" value="<%= todo.text %>"></p>
+        <input type="submit" value="更新">
+    </form>
+    </body>
+</html>

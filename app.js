@@ -59,6 +59,28 @@ app.post('/create', (req, res) => {
   );
 });
 
+//編集
+app.get('/edit/:id',(req,res)=>{
+  connection.query(
+    'SELECT * FROM todos WHERE id = ?',
+    [req.params.id],
+    (error, results) => {
+      res.render('edit.ejs', {todo: results[0]});
+    }
+  )
+});
+
+//更新
+app.put('/update/:id',(req,res)=>{
+  connection.query(
+    'UPDATE todos SET title = ?, text = ? WHERE id = ?',
+    [req.body.editTitle,req.body.editText, req.params.id],
+    (error, results) => {
+      res.redirect('/');
+    }
+  );
+})
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
