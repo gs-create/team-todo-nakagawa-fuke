@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>ToDoリスト</title>
   </head>
   <body>
+    <div class="modal-wrapper">
+    <div id="modal" class="modal js-modal">
+      <div class="modal__content">
+        <a href="#" class="js-modal__close">×</a>
+        <p>有料登録しませんか？ </p>
+        <p>このサービスに登録するとこんな機能が追加されます。</p>
+        <ul>
+          <li>タスクの編集機能</li>
+          <li>期限通知機能</li>
+          <li>他サービスとの連携</li>
+        </ul>
+      <a href="" class="js-modal__close">OK</a>
+      </div>
+    </div>
+  </div>
     <h1>ToDo登録</h1>
     <form action="/create" method="post">
       <p>タスク名</p>
@@ -37,4 +53,6 @@
       <% }) %>
     </ul>
   </body>
+  <script src="/javascript/script.js"></script>
+
 </html>
