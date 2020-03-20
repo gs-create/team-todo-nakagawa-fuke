@@ -6,3 +6,24 @@ body {
 a {
   color: #00B7FF;
 }
+
+.modal {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.modal-content {
+  background: #fff;
+  top: 0;
+  left: 50%;
+  position: absolute;
+  width: 50%;
+  transform: translate(-50%,0);
+}
+
+.show {
+  display: block;
+}
