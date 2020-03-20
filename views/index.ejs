@@ -7,6 +7,18 @@
     <title>ToDoリスト</title>
   </head>
   <body>
+    <h1>ToDo登録</h1>
+    <form action="/create" method="post">
+      <p>タスク名</p>
+      <input type="text" name="todoTitle">
+      <p>タスク詳細</p>
+      <input type="text" name="todoText">
+      <p>
+        <input type="submit" value="作成">
+      </p>
+    </form>
+    <input type="submit" value="クリア">
+
     <h1>ToDoリスト</h1>
     <ul>
       <% todos.map(todo => { %>

@@ -48,6 +48,17 @@ app.get('/', (req, res) => {
   );
 });
 
+// 新規作成
+app.post('/create', (req, res) => {
+  connection.query(
+    'INSERT INTO todos (title,text) VALUES (?,?)',
+    [req.body.todoTitle,req.body.todoText],
+    (error, results) => {
+      res.redirect('/');
+    }
+  );
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
